@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">茶福德</string>
+
+    <!--我的-->
+    <string name="string_chadou">茶豆</string>
+    <string name="string_jifen">积分</string>
+    <string name="string_xiaoxi">消息</string>
+</resources>

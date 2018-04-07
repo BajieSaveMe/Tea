@@ -1,0 +1,26 @@
+<resources>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/bg_cold_start</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <!--主页底部Tag-->
+    <declare-styleable name="TagBottomView">
+        <attr name="bottom_icon" format="reference" />
+        <attr name="bottom_text" format="string|reference" />
+    </declare-styleable>
+
+    <!--我的信息字体样式-->
+    <style name="style_text_myInfo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/dimen_dp_56dp</item>
+        <item name="android:textColor">@color/color_666666</item>
+        <item name="android:textSize">@dimen/dimen_sp_15sp</item>
+    </style>
+
+</resources>

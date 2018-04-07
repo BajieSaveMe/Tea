@@ -1,0 +1,91 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+kapt {
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+android {
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("boolean", "IS_DEBUG", project.hasProperty("IS_DEBUG") ? "${IS_DEBUG}" : "true")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile "com.android.support:appcompat-v7:$rootProject.appcompatVersion"
+    compile "com.android.support.constraint:constraint-layout:$rootProject.constraintVersion"
+
+    //design
+    compile "com.android.support:design:$rootProject.appcompatVersion"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    compile "org.jetbrains.anko:anko-commons:$anko_version"
+    compile "org.jetbrains.anko:anko-design:$anko_version"
+    testCompile 'junit:junit:4.12'
+    androidTestCompile 'com.android.support.test:runner:1.0.1'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    //retrofit
+    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofitVersion"
+    compile "com.squareup.okhttp3:okhttp:$rootProject.okhttpVersion"
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttpVersion"
+    compile "com.google.code.gson:gson:$rootProject.gsonVersion"
+
+    //rxAndroid和RxKotlin
+    compile "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroidVersion"
+    compile "io.reactivex.rxjava2:rxkotlin:$rootProject.rxKotlinVersion"
+
+    //dagger2
+    compile "com.google.dagger:dagger:$rootProject.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+
+    //glide
+    compile "com.github.bumptech.glide:glide:$rootProject.glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glideVersion"
+    compile "com.alibaba:arouter-api:$rootProject.arouterVersion"
+    kapt "com.alibaba:arouter-compiler:$rootProject.arouterCompilerVersion"
+    compile "com.trello.rxlifecycle2:rxlifecycle-kotlin:$rx_lifecycle_version"
+    compile "com.trello.rxlifecycle2:rxlifecycle-components:$rx_lifecycle_version"
+    compile "com.trello.rxlifecycle2:rxlifecycle-android-lifecycle-kotlin:$rx_lifecycle_version"
+
+    //下拉刷新组件
+    compile "com.scwang.smartrefresh:SmartRefreshLayout:${rootProject.ext.refreshVersion}"
+
+    //沉浸式
+    compile("com.jaeger.statusbarutil:library:$rootProject.statusbarVersion", {
+        exclude group: 'com.android.support'
+    })
+
+    //Banner
+    compile 'com.youth.banner:banner:1.4.10'
+
+    //最新版本
+
+    //Kotlin Bus
+    compile 'com.eightbitlab:rxbus:1.0.2'
+    compile "com.alibaba:fastjson:$rootProject.fastJson"
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_FFFFFF"
+    android:orientation="vertical">
+
+    <com.fude.david.base.view.NoScrollViewPager
+        android:id="@+id/mVpMainPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_dp_1dp"
+        android:background="@color/color_F0F0F0" />
+
+    <LinearLayout
+        android:id="@+id/llll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_dp_48dp"
+        android:layout_alignParentBottom="true"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dimen_dp_3dp"
+        android:paddingTop="7.5dip">
+
+        <com.fude.david.tea.view.TagBottomView
+            android:id="@+id/bottom1"
+            android:layout_width="@dimen/dimen_dp_72dp"
+            android:layout_height="match_parent"
+            app:bottom_icon="@mipmap/ic_launcher"
+            app:bottom_text="首页" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.fude.david.tea.view.TagBottomView
+            android:id="@+id/bottom2"
+            android:layout_width="@dimen/dimen_dp_72dp"
+            android:layout_height="match_parent"
+            app:bottom_icon="@mipmap/ic_launcher"
+            app:bottom_text="分类" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <com.fude.david.tea.view.TagBottomView
+            android:id="@+id/bottom3"
+            android:layout_width="@dimen/dimen_dp_72dp"
+            android:layout_height="match_parent"
+            app:bottom_icon="@mipmap/ic_launcher"
+            app:bottom_text="我的" />
+    </LinearLayout>
+</LinearLayout>
