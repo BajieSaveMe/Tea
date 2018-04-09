@@ -1,6 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/stateBar"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_dp_42dp"
+        android:background="@color/color_FFFFFF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="@dimen/dimen_dp_42dp"
+            android:layout_height="@dimen/dimen_dp_42dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/dimen_dp_16dp"
+                android:layout_height="@dimen/dimen_dp_16dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="扫一扫"
+                android:textSize="@dimen/dimen_sp_10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dimen_dp_32dp"
+            android:layout_marginRight="@dimen/dimen_dp_10dp"
+            android:layout_weight="1"
+            android:background="#dddddd"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dimen_dp_60dp">
+
+            <ImageView
+                android:layout_width="@dimen/dimen_dp_20dp"
+                android:layout_height="@dimen/dimen_dp_20dp"
+                android:src="@android:drawable/ic_search_category_default" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="搜索茶叶名称"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/dimen_sp_12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <com.fude.david.tablayout.VerticalTabLayout
+            android:id="@+id/vtb"
+            android:layout_width="@dimen/dimen_dp_80dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_FFFFFF"
+            android:visibility="visible"
+            app:indicator_color="@color/colorPrimary"
+            app:indicator_gravity="left"
+            app:tab_height="@dimen/dimen_dp_50dp"
+            app:tab_mode="scrollable" />
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_F0F0F0" />
+
+        <com.fude.david.base.view.NoScrollViewPager
+            android:id="@+id/vtbvp"
+            android:layout_width="@dimen/dimen_dp_0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </LinearLayout>

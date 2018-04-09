@@ -2,6 +2,8 @@
     package="com.fude.david.usercenter">
 
     <application>
-        <activity android:name=".ui.activity.LoginActivity" />
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

@@ -53,9 +53,7 @@ abstract class LazyFragment : Fragment() {
     abstract fun initView()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(setLayoutView(), container, false)
-        initView()
-        return view
+        return inflater.inflate(setLayoutView(), container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -74,6 +72,7 @@ abstract class LazyFragment : Fragment() {
             }
         }
         super.onViewCreated((if (isReuseView && rootView != null) rootView else view)!!, savedInstanceState)
+        initView()
     }
 
     override fun onDestroy() {

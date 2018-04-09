@@ -39,6 +39,7 @@ class MainActivity : BaseActivity() {
         lsFragment.add(MineFragment.getInstance())
         adapter = MyAdapter(supportFragmentManager)
         mVpMainPager.adapter = adapter
+        mVpMainPager.offscreenPageLimit = lsFragment.size
         mVpMainPager.currentItem = 0
         initTagView()
         bottom1.onClick {
@@ -48,9 +49,7 @@ class MainActivity : BaseActivity() {
             selected(1, true)
         }
         bottom3.onClick {
-            afterLogin {
-                selected(2, true)
-            }
+            selected(2, true)
         }
     }
 

@@ -1,6 +1,7 @@
 package com.fude.david.base.ext
 
 import android.content.Context
+import android.util.TypedValue
 import android.view.View
 import android.widget.Toast
 
@@ -24,4 +25,11 @@ fun Context.toast(message: String, duration: Int = Toast.LENGTH_SHORT) {
 fun Number.dip2px(context: Context): Int {
     var scale = context.resources.displayMetrics.density
     return (this.toFloat() * scale + 0.5f).toInt()
+}
+
+/**
+ * sp转换px
+ */
+fun Number.sp2px(context: Context): Int {
+    return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, this.toFloat(), context.resources.displayMetrics).toInt()
 }

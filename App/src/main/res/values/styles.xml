@@ -1,5 +1,10 @@
 <resources>
 
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/activity_fade_in_out</item>
+    </style>
+
     <style name="SplashTheme" parent="AppTheme">
         <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@drawable/bg_cold_start</item>

@@ -9,9 +9,12 @@ import android.view.ViewGroup
 abstract class BaseFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(setLayoutView(), container, false)
+        return inflater.inflate(setLayoutView(), container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initView()
-        return view
     }
 
     abstract fun setLayoutView(): Int

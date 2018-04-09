@@ -1,1 +1,1 @@
-include ':App', ':Base', ':Provider', ':Usercenter'
+include ':App', ':Base', ':Provider', ':Usercenter', ':Plateformsdk', ':VTablayout'

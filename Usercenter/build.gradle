@@ -29,6 +29,10 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
 }
 
 dependencies {
@@ -38,6 +42,7 @@ dependencies {
     androidTestCompile 'com.android.support.test:runner:1.0.1'
     androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile project(':Provider')
+    compile project(':Plateformsdk')
     kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
     kapt "com.alibaba:arouter-compiler:$rootProject.arouterCompilerVersion"
 }
