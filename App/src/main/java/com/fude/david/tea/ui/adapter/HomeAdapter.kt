@@ -2,6 +2,7 @@ package com.fude.david.tea.ui.adapter
 
 import android.content.Context
 import android.graphics.Rect
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.LinearLayoutManager.HORIZONTAL
 import android.support.v7.widget.RecyclerView
@@ -24,6 +25,7 @@ class HomeAdapter(private val mContext: Context) : RecyclerView.Adapter<Recycler
     private val url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523290253856&di=3fb1155c436c60b31229812a6b84e7c2&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F019ec8578f03a20000012e7e6e27c1.jpg"
     val images: List<String> = arrayListOf(url, url, url, url, url, url)
     val newGoodsList: ArrayList<Goods> = arrayListOf(Goods(goodsName = "新商品1", showPic = url), Goods(goodsName = "新商品1", showPic = url), Goods(goodsName = "新商品1", showPic = url), Goods(goodsName = "新商品1", showPic = url), Goods(goodsName = "新商品1", showPic = url), Goods(goodsName = "新商品1", showPic = url))
+    val guessGoodsList: ArrayList<Goods> = arrayListOf(Goods(goodsName = "新商品1", showPic = url), Goods(goodsName = "新商品1", showPic = url), Goods(goodsName = "新商品1", showPic = url), Goods(goodsName = "新商品1", showPic = url), Goods(goodsName = "新商品1", showPic = url), Goods(goodsName = "新商品1", showPic = url))
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
@@ -78,6 +80,21 @@ class HomeAdapter(private val mContext: Context) : RecyclerView.Adapter<Recycler
             }
             4 -> if (holder is GuessLikeHolder) {
                 holder.itemView.mLlGuess.layoutParams = layoutParams
+                holder.itemView.mRlvGuess.layoutManager = GridLayoutManager(mContext, 2)
+                holder.itemView.mRlvGuess.addItemDecoration(object : RecyclerView.ItemDecoration() {
+                    override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView?, state: RecyclerView.State?) {
+                        super.getItemOffsets(outRect, view, parent, state)
+                        val position = parent!!.getChildAdapterPosition(view)
+                        outRect!!.left = 10.dip2px(mContext)
+                        if (position % 2 == 0) {
+                            outRect.right = 0
+                        } else {
+                            outRect.right = 10.dip2px(mContext)
+                        }
+                        outRect.bottom = 10.dip2px(mContext)
+                    }
+                })
+                holder.itemView.mRlvGuess.adapter = HomeGuessAdapter(mContext, guessGoodsList)
             }
         }
     }

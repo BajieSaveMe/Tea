@@ -12,6 +12,7 @@ import com.fude.david.base.utils.ScreenUtil
 import com.fude.david.tea.R
 import com.fude.david.tea.bean.Goods
 import kotlinx.android.synthetic.main.item_new_goods.view.*
+import kotlinx.android.synthetic.main.item_new_show_all.view.*
 
 class HomeNewAdapter(private val mContext: Context, private var goodsList: ArrayList<Goods>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
@@ -29,12 +30,15 @@ class HomeNewAdapter(private val mContext: Context, private var goodsList: Array
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
+        val width = (ScreenUtil.getScreenWidth(mContext) - 40.dip2px(mContext)) / 2
         if (position == goodsList.size) {
-
+            if (holder is ShowAllHolder) {
+                val layoutParams = RecyclerView.LayoutParams(RecyclerView.LayoutParams.WRAP_CONTENT, width)
+                holder.itemView.mLlShowAll.layoutParams = layoutParams
+            }
         } else {
             val goods = goodsList[position]
             if (holder is GoodsHolder) {
-                val width = (ScreenUtil.getScreenWidth(mContext) - 40.dip2px(mContext)) / 2
                 Glide.with(mContext).load(goods.showPic).into(holder.itemView.mIvGoodsPic)
                 val layoutParams = LinearLayout.LayoutParams(width, width)
                 holder.itemView.mIvGoodsPic.layoutParams = layoutParams

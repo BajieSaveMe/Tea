@@ -37,6 +37,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/color_FFFFFF"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:paddingRight="@dimen/dimen_dp_10dp"
         android:scrollbars="none" />
 
 </LinearLayout>

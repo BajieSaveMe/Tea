@@ -25,6 +25,7 @@ class HomeFragment : LazyFragment() {
     }
 
     override fun initView() {
+        refreshLayout.isEnableOverScrollBounce = false
         adapter = HomeAdapter(mContext!!)
         mRlvHome.layoutManager = LinearLayoutManager(mContext)
         mRlvHome.adapter = adapter
