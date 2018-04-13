@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mLlShop"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/dimen_dp_20dp"
+        android:drawableRight="@mipmap/ic_next_arrows"
+        android:paddingBottom="@dimen/dimen_dp_12dp"
+        android:paddingTop="@dimen/dimen_dp_12dp"
+        android:text="商铺"
+        android:textSize="@dimen/dimen_sp_16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_dp_200dp"
+        android:layout_marginLeft="@dimen/dimen_dp_8dp"
+        android:layout_marginRight="@dimen/dimen_dp_8dp"
+        android:background="@color/color_FFFFFF"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/dimen_dp_0dp"
+            android:layout_height="@dimen/dimen_dp_200dp"
+            android:layout_marginRight="@dimen/dimen_dp_4dp"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:src="@mipmap/ic_app_default" />
+
+        <LinearLayout
+            android:layout_width="@dimen/dimen_dp_0dp"
+            android:layout_height="@dimen/dimen_dp_200dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_dp_0dp"
+                android:layout_marginBottom="@dimen/dimen_dp_4dp"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_app_default" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_dp_0dp"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_app_default" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
